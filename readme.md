@@ -155,7 +155,7 @@ Special thanks go to the following resources:
 
 ### Other
 
-Snazzy Maps
+ - https://snazzymaps.com/
 
 ## License
 Google Maps Creator
