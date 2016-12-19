@@ -1,0 +1,11 @@
+/* Checkbox label white fix */
+.has-error .checkbox {
+	color:#555555;
+}
+/* Button stay on place at hover (theme specific) */
+.btn.form-control:hover {
+	margin-top:16px;
+}
+.nav-tabs a {
+   outline: 0 !important;
+}

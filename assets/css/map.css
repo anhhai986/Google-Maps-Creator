@@ -1,0 +1,224 @@
+html,
+body {
+  height: 100%;
+  margin:0;
+  padding:0;
+  overflow: hidden;
+}
+body {
+	padding-top:54px;
+}
+.full-height {
+	height:100%;
+}
+#map-container .col {
+	padding:0;
+}
+.navbar-form {
+	border:0;
+	padding:0;
+}
+.navbar-form .form-group {
+	display:inline;
+}
+.dropdown-box {
+	padding:0 10px;
+}
+#map-link {
+	width:240px;
+}
+#sidebar {
+	overflow:auto;
+	height:100%;
+}
+#sidebar .list-group-item {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.icon-holder {
+	float:left;
+	width:24px;
+	text-align:center;
+}
+.list-group-item-heading {
+    margin-bottom: 3px !important;
+    margin-top: 3px !important;
+}
+.list-group-item .badge {
+	margin-top:4px;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+    z-index: 1000;
+}
+.navbar-form,
+.navbar-form .form-group,
+.navbar-form .input-group,
+#place_input {
+	width:100%;
+}
+.navbar-form .input-group-btn {
+	width:38px !important;
+}
+.controls-here {
+	margin-top:-1px;
+}
+.controls-here div {
+	float:right;
+	margin-left:5px;
+}
+.controls-here i {
+	font-size:22px;
+}
+#optionFilter.dropdown-menu {
+	padding: 0;
+}
+
+/* Directions */
+#directions {
+	display:none;
+	padding:10px 10px 0 10px;
+}
+#directions-panel {
+	margin:0;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+#directions-panel,
+#directions-panel table {
+	background-color:#fff;
+}
+#close-directions {
+	margin:5px 5px 5px 0;
+	position:absolute;
+	right:10px;
+}
+.adp-step, .adp-substep {
+	padding:0.3em 2px;
+}
+.adp-placemark {
+	margin:10px 0;
+}
+.adp-placemark td {
+	padding:10px;
+}
+.adp-legal {
+	margin:5px 10px 10px;
+	padding-bottom: 10px;
+}
+
+.navbar-nav .btn-group {
+	vertical-align:middle;
+}
+.distance_mi {
+	display:none;
+}
+
+/* nicescroll */
+.nicescroll-rails {
+    z-index:10;
+}
+
+/* Google Maps info window */
+.info-container {
+    overflow: hidden;
+	color:#222;
+}
+.info-container h5 {
+ 	color:#222;
+}
+.info-row {
+	margin-top:5px;	
+}
+.info-actions {
+	margin-top:10px;
+}
+
+/* Theme specific adjustments */
+.navbar .container-fluid {
+	padding:0 5px;
+}
+
+#readable .navbar-form {
+	margin-top:14px;
+}
+
+#superhero #optionFilter h5,
+#superhero #optionFilter label {
+	color:#EBEBEB
+}
+
+#superhero .navbar .container-fluid {
+	padding:0;
+}
+#search-container .col {
+	padding-right:5px;	
+}
+
+#amelia #optionFilter h5,
+#amelia #optionFilter label,
+#amelia .info-container .info-actions a {
+	color:#AD1D28
+}
+
+#darkly #optionFilter label,
+#darkly .info-container .info-actions a {
+	color:#375A7F
+}
+
+#flatly #optionFilter label,
+#flatly .info-container .info-actions a {
+	color:#2C3E50
+}
+
+#slate .info-container .info-actions a {
+	color:#222222
+}
+
+#readable #optionFilter label {
+	color:#4582EC
+}
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.navbar-form {
+		padding:0 10px !important;
+		border:0 !important;
+		box-shadow:none !important;
+	}
+	#map-link {
+		width:100%;
+	}
+	.navbar .container-fluid {
+		padding:0 20px !important;
+	}
+
+    #search-container .col {
+        padding-right:15px;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
+}

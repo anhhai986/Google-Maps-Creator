@@ -1,0 +1,267 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+	/* Always show scroll */
+	overflow-y:scroll;
+}
+
+.list-actions {
+}
+
+.list-actions .btn {
+    margin-right:5px;
+    margin-bottom:20px;
+}
+
+.breadcrumb {
+	margin-top:15px;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-bordered td {
+	vertical-align:middle !important;
+}
+
+.embed-area {
+	width:245px;
+	height:140px;
+}
+
+/*
+ * Empty table
+ */
+
+td h4.text-muted {
+	margin:20px;
+}
+
+/*
+ * handsontable
+ */
+
+.wtHolder {
+	border:1px solid #D3D3D3;
+	border-left:0;
+	border-collapse:collapse;
+}
+
+/*
+ * jQuery Bootgrid hide first + last filter item
+ */
+
+.actionBar ul.dropdown-menu.pull-right li:first-child,
+.actionBar ul.dropdown-menu.pull-right li:last-child
+{
+	display:none;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+.sidebar h4 {
+  color:#a0a0a0;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #353535;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+	margin-right: -21px; /* 20px padding + 1px border */
+	margin-bottom: 20px;
+	margin-left: -20px;
+}
+.nav-sidebar > li > a {
+	padding-right: 20px;
+	padding-left: 20px;
+	color:#fff;
+	opacity: 1;
+	transition: background .15s ease-in-out;
+	-moz-transition: background .15s ease-in-out;
+	-webkit-transition: background .15s ease-in-out;
+}
+.nav-sidebar > li > a:hover {
+	color: #353535;
+	-webkit-box-shadow: inset 3px 3px 15px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 3px 3px 15px 0px rgba(0,0,0,0.2);
+	box-shadow: inset 3px 3px 15px 0px rgba(0,0,0,0.2);
+}
+.nav-sidebar > .active > a {
+  color: #353535;
+  background-color: #fff;
+}
+.nav-sidebar > li.active > a:hover, .nav-sidebar > li.active > a:focus {
+  background-color: #fff;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+  color:#fff;
+  font-size:1.8em;
+}
+.placeholder {
+  margin-bottom:20px;
+  color:#fff;
+  font-size:1.2em;
+}
+.placeholder div {
+  padding:20px 0;
+  width:100%;
+  border-radius: 4px;
+}
+
+/*
+ * Pills nav tabs
+ */
+
+.top-tabs {
+	margin-bottom:20px;
+}
+
+.table-bordered table {
+	margin-bottom:0
+}
+
+/*
+ * Remove top corners for tab panels
+ */
+
+.tab-content .panel {
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+/*
+ * Summernote scroll fix
+ */
+
+body.modal-open {
+	overflow:auto;
+}
+
+/*
+ * csv table
+ */
+table.csv {
+	margin:10px 0;
+}
+
+table.csv td {
+	border:2px solid #ccc;
+	padding:5px;
+}
+
+/*
+ * select2
+ */
+
+.select2-container-multi .select2-choices {
+    background:none !important;
+}
+.select2-container-active .select2-choice, .select2-container-active .select2-choices {
+    box-shadow: none !important;
+}
+
+#s2id_marker.select2-container .select2-choice {
+	height: 56px;
+    line-height: 54px;
+}
+
+.select2-container-multi .select2-search-choice-close {
+	top:3px;
+	left:5px;
+}
+
+#s2id_theme.select2-container .select2-choice,
+#s2id_map_style_id.select2-container .select2-choice {
+	height:116px;
+    line-height: 84px;
+}
+
+#s2id_map_style_id.select2-container img,
+#s2id_theme.select2-container img {
+	margin:10px 2px;
+}
+
+/*
+ * Flat colors
+ */
+
+.turquoise { background: #1abc9c; }
+.emerland { background: #2ecc71; }
+.peterriver { background: #3498db; }
+.amethyst { background: #9b59b6; }
+.wetasphalt { background: #34495e; }
+.greensea { background: #16a085; }
+.nephritis { background: #27ae60; }
+.belizehole { background: #2980b9; }
+.wisteria { background: #8e44ad; }
+.midnightblue { background: #2c3e50; }
+.sunflower { background: #f1c40f; }
+.carrot { background: #e67e22; }
+.alizarin { background: #e74c3c; }
+.clouds { background: #ecf0f1; color: #999; }
+.concrete { background: #95a5a6; }
+.orange { background: #f39c12; }
+.pumpkin { background: #d35400; }
+.pomegranate { background: #c0392b; }
+.silver { background: #bdc3c7; }
+.asbestos { background: #7f8c8d; }
