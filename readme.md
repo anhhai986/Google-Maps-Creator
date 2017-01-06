@@ -29,7 +29,7 @@ It's multi user so you can give your customers their own login. They will be abl
 
 Make sure your server meets the requirements below. Most of the PHP libraries are installed by default.
 
- - PHP >= 5.4
+ - PHP >= 5.5
    - MCrypt PHP Extension
    - PHP SQLite3 PDO
  - Apache mod_rewrite
