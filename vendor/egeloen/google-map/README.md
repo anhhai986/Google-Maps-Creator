@@ -1,6 +1,7 @@
 # README
 
-[![Build Status](https://travis-ci.org/egeloen/ivory-google-map.svg?branch=master)](http://travis-ci.org/egeloen/ivory-google-map)
+[![Travis Build Status](https://travis-ci.org/egeloen/ivory-google-map.svg?branch=master)](http://travis-ci.org/egeloen/ivory-google-map)
+[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/x981x6n27d0wpf0t/branch/master?svg=true)](https://ci.appveyor.com/project/egeloen/ivory-google-map/branch/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/?branch=master)
 [![Dependency Status](http://www.versioneye.com/php/egeloen:google-map/badge.svg)](http://www.versioneye.com/php/egeloen:google-map)
@@ -10,8 +11,26 @@
 [![Total Downloads](https://poser.pugx.org/egeloen/google-map/downloads.svg)](https://packagist.org/packages/egeloen/google-map)
 [![License](https://poser.pugx.org/egeloen/google-map/license.svg)](https://packagist.org/packages/egeloen/google-map)
 
+## Overview
+
 The Ivory Google Map project provides a Google Map integration for your PHP 5.6+ project. It allows you to manage map,
 controls, overlays, events & services through the Google Map API v3.
+
+``` php
+use Ivory\GoogleMap\Helper\Builder\ApiHelperBuilder;
+use Ivory\GoogleMap\Helper\Builder\MapHelperBuilder;
+use Ivory\GoogleMap\Map;
+
+$map = new Map();
+
+$mapHelper = MapHelper::create()->build();
+$apiHelper = ApiHelperBuilder::create()
+    ->setKey('API_KEY')
+    ->build();
+
+echo $mapHelper->render($map);
+echo $apiHelper->render([$map]);
+```
 
 ## Documentation
 
@@ -49,6 +68,7 @@ controls, overlays, events & services through the Google Map API v3.
          - [Autocomplete](/doc/place/autocomplete.md)
       - [Rendering](/doc/helper/index.md)
          - [Map Rendering](/doc/helper/map.md)
+         - [Static Map Rendering](/doc/helper/static_map.md)
          - [Places Autocomplete Rendering](/doc/helper/place_autocomplete.md)
          - [API Rendering](/doc/helper/api.md)
       - [Services](/doc/service/index.md)
@@ -56,7 +76,12 @@ controls, overlays, events & services through the Google Map API v3.
          - [Distance Matrix](/doc/service/distance_matrix/distance_matrix.md)
          - [Elevation](/doc/service/elevation/elevation.md)
          - [Geocoder](/doc/service/geocoder/geocoder.md)
-         - [TimeZone](/doc/service/timezone/timezone.md)
+         - [Place](/doc/service/place/index.md)
+            - [Autocomplete](/doc/service/place/autocomplete/place_autocomplete.md)
+            - [Detail](/doc/service/place/detail/place_detail.md)
+            - [Photo](/doc/service/place/photo/place_photo.md)
+            - [Search](/doc/service/place/search/place_search.md)
+         - [TimeZone](/doc/service/timezone/place_timezone.md)
 
 ## Testing
 
@@ -65,7 +90,8 @@ execute the test suite, check the travis [configuration](/.travis.yml).
 
 ## Contribute
 
-We love contributors! Ivory is an open source project. If you'd like to contribute, feel free to propose a PR!.
+We love contributors! Ivory is an open source project. If you'd like to contribute, feel free to propose a PR! You
+can follow the [CONTRIBUTING](/CONTRIBUTING.md) file which will explain you how to set up the project.
 
 ## License
 

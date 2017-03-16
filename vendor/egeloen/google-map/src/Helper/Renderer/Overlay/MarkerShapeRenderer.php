@@ -26,9 +26,10 @@ class MarkerShapeRenderer extends AbstractJsonRenderer
      */
     public function render(MarkerShape $markerShape)
     {
-        return $this->getJsonBuilder()
+        $jsonBuilder = $this->getJsonBuilder()
             ->setValue('[type]', $markerShape->getType())
-            ->setValue('[coords]', $markerShape->getCoordinates())
-            ->build();
+            ->setValue('[coords]', $markerShape->getCoordinates());
+
+        return $this->getFormatter()->renderObjectAssignment($markerShape, $jsonBuilder->build());
     }
 }

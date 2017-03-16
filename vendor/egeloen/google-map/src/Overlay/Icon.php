@@ -13,14 +13,20 @@ namespace Ivory\GoogleMap\Overlay;
 
 use Ivory\GoogleMap\Base\Point;
 use Ivory\GoogleMap\Base\Size;
+use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use Ivory\GoogleMap\Utility\VariableAwareTrait;
 
 /**
  * @see http://code.google.com/apis/maps/documentation/javascript/reference.html#Icon
  *
  * @author GeLo <geloen.eric@gmail.com>
  */
-class Icon
+class Icon implements VariableAwareInterface
 {
+    const DEFAULT_URL = 'https://maps.gstatic.com/mapfiles/markers/marker.png';
+
+    use VariableAwareTrait;
+
     /**
      * @var string
      */
@@ -54,7 +60,7 @@ class Icon
      * @param Size|null  $size
      */
     public function __construct(
-        $url = 'https://maps.gstatic.com/mapfiles/markers/marker.png',
+        $url = self::DEFAULT_URL,
         Point $anchor = null,
         Point $origin = null,
         Size $scaledSize = null,

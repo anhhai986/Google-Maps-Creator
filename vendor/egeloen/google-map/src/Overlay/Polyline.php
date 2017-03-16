@@ -14,6 +14,8 @@ namespace Ivory\GoogleMap\Overlay;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\OptionsAwareTrait;
+use Ivory\GoogleMap\Utility\StaticOptionsAwareInterface;
+use Ivory\GoogleMap\Utility\StaticOptionsAwareTrait;
 use Ivory\GoogleMap\Utility\VariableAwareTrait;
 
 /**
@@ -21,9 +23,10 @@ use Ivory\GoogleMap\Utility\VariableAwareTrait;
  *
  * @author GeLo <geloen.eric@gmail.com>
  */
-class Polyline implements ExtendableInterface, OptionsAwareInterface
+class Polyline implements ExtendableInterface, OptionsAwareInterface, StaticOptionsAwareInterface
 {
     use OptionsAwareTrait;
+    use StaticOptionsAwareTrait;
     use VariableAwareTrait;
 
     /**
@@ -32,13 +35,19 @@ class Polyline implements ExtendableInterface, OptionsAwareInterface
     private $coordinates = [];
 
     /**
-     * @param Coordinate[] $coordinates
-     * @param mixed[]      $options
+     * @var IconSequence[]
      */
-    public function __construct(array $coordinates = [], array $options = [])
+    private $iconSequences = [];
+
+    /**
+     * @param Coordinate[]   $coordinates
+     * @param IconSequence[] $icons
+     * @param mixed[]        $options
+     */
+    public function __construct(array $coordinates = [], array $icons = [], array $options = [])
     {
-        $this->setVariablePrefix('polyline');
         $this->addCoordinates($coordinates);
+        $this->addIconSequences($icons);
         $this->addOptions($options);
     }
 
@@ -101,5 +110,66 @@ class Polyline implements ExtendableInterface, OptionsAwareInterface
     public function removeCoordinate(Coordinate $coordinate)
     {
         unset($this->coordinates[array_search($coordinate, $this->coordinates, true)]);
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasIconSequences()
+    {
+        return !empty($this->iconSequences);
+    }
+
+    /**
+     * @return IconSequence[]
+     */
+    public function getIconSequences()
+    {
+        return $this->iconSequences;
+    }
+
+    /**
+     * @param IconSequence[] $iconSequences
+     */
+    public function setIconSequences($iconSequences)
+    {
+        $this->iconSequences = [];
+        $this->addIconSequences($iconSequences);
+    }
+
+    /**
+     * @param IconSequence[] $iconSequences
+     */
+    public function addIconSequences($iconSequences)
+    {
+        foreach ($iconSequences as $iconSequence) {
+            $this->addIconSequence($iconSequence);
+        }
+    }
+
+    /**
+     * @param IconSequence $iconSequence
+     *
+     * @return bool
+     */
+    public function hasIconSequence(IconSequence $iconSequence)
+    {
+        return in_array($iconSequence, $this->iconSequences, true);
+    }
+
+    /**
+     * @param IconSequence $iconSequence
+     */
+    public function addIconSequence(IconSequence $iconSequence)
+    {
+        $this->iconSequences[] = $iconSequence;
+    }
+
+    /**
+     * @param IconSequence $iconSequence
+     */
+    public function removeIconSequence(IconSequence $iconSequence)
+    {
+        unset($this->iconSequences[array_search($iconSequence, $this->iconSequences, true)]);
     }
 }
