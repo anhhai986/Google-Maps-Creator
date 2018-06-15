@@ -1,7 +1,7 @@
 # Google Maps Creator
 **Easy to embed and manage Google Maps.**
 
-Visit https://nowsquare.com/google-maps-creator for a demo.
+https://www2.nowsquare.com/google-maps-creator
 
 ![Google Maps Creator](visual-header.png)
 
